@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PengalamanKerjaController;
 use App\Http\Controllers\PendidikanController;
 use App\Http\Controllers\SessionController;
@@ -52,6 +53,10 @@ Route::group(['namespace' => 'App'], function(){
 Route::get('/session/create', [SessionController::class, 'create']);
 Route::get('/session/show', [SessionController::class, 'show']);
 Route::get('/session/delete', [SessionController::class, 'delete']);
+
+Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
+Route::get('/formulir', [PegawaiController::class, 'formulir']);
+Route::post('/formulir/proses', [PegawaiController::class, 'proses'])->name('pegawai');
 
 // Route::get('home/profile', function () {
 //     // ...
