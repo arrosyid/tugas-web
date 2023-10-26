@@ -57,6 +57,8 @@ Route::get('/session/delete', [SessionController::class, 'delete']);
 Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
 Route::get('/formulir', [PegawaiController::class, 'formulir']);
 Route::post('/formulir/proses', [PegawaiController::class, 'proses'])->name('pegawai');
+Route::get('/eror500', [PegawaiController::class, 'eror500']);
+Route::get('/eror403', [PegawaiController::class, 'eror403']);
 
 // Route::get('home/profile', function () {
 //     // ...
